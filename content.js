@@ -1,11 +1,24 @@
-// content/content.js
-console.log('Content script loaded');
+document.body.style.border = "5px solid red";
+// if js wont load try disabling and reenabling the extension? not sure of problem
+// content.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Content script loaded');
+
+    // Rest of your content script logic...
+});
+const addressElement = selectedProperty.querySelector('.property-info-address');
+const priceElement = selectedProperty.querySelector('.property-price.property-info__price');
+console.log("AddressQuery:" + addressElement);
+console.log("PriceQuery:" +priceElement);   // wont log at all..
+
+
 // Function to extract property details from the selected property
 function getPropertyDetails(selectedProperty) {
-    const addressElement = selectedProperty.querySelector('.property-address');
-    const priceElement = selectedProperty.querySelector('.property-price');
-    console.log("AddressQuery:" + addressElement)
-    console.log("PriceQuery:" +priceElement)
+    const addressElement = selectedProperty.querySelector('.property-info-address');
+    const priceElement = selectedProperty.querySelector('.property-price.property-info__price');
+    console.log("AddressQuery:" + addressElement);
+    console.log("PriceQuery:" +priceElement);
 
     // Check if the price is available
     let price = priceElement ? priceElement.textContent.trim() : 'Contact Agent';

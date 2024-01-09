@@ -10,15 +10,16 @@
     ],
     "browser_action": {
       "default_icon": {
-        "48": "icon.png"
+        "48": "images/icon.jpg"
       },
       "default_title": "RealEstate Price Viewer"
     },
     "content_scripts": [
-      {
-        "matches": ["*://www.realestate.com.au/property/*"],
-        "js": ["content/content.js"]
-      }
+        {
+            "matches": ["*://www.realestate.com.au/*"],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        }
     ],
     "icons": {
       "48": "images/icon.jpg"
